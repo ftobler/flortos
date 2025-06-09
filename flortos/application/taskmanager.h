@@ -9,9 +9,17 @@
 #define TASKMANAGER_H_
 
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 void taskmanager_start();
 
+
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif /* TASKMANAGER_H_ */
