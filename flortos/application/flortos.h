@@ -76,7 +76,6 @@ void scheduler_task_sleep(uint32_t time);
  */
 uint32_t scheduler_event_wait(uint32_t eventWaitMask);
 
-
 /**
  * Wait for some event flags
  * If a flag the task is waiting on is set this function exits.
@@ -93,13 +92,20 @@ uint32_t scheduler_event_wait_timeout(uint32_t eventWaitMask, uint32_t time);
  */
 void scheduler_event_set(uint32_t id, uint32_t eventSetMask);
 
-
+/**
+ * clear the given event flag of the current thread
+ */
 void scheduler_event_clear(uint32_t eventMask);
 
-
+/**
+ * ISR for tick update
+ */
 void scheduler_systick_handler();
 
-
+/**
+ * ISR for PendSV (the context switch)
+ * Handles the context switch
+ */
 void scheduler_pendSV_handler();
 
 
